@@ -44,10 +44,11 @@ def view_pdf(filename):
 def serve_pdf(filename):
     return send_from_directory("data", filename)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
-    
  @app.route("/pdf/<univ>/<faculty>/<department>/<year>/<filename>")
 def serve_pdf(univ, faculty, department, year, filename):
     path = os.path.join("data", univ, faculty, department, year)
     return send_from_directory(path, filename)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
+    

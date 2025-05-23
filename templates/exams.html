@@ -1,0 +1,7 @@
+<h1>過去問一覧</h1>
+<ul>
+  {% for file in files %}
+    <li><a href="{{ path }}/{{ file }}">{{ file }}</a></li>
+  {% endfor %}
+</ul>
+<a href="/">← トップに戻る</a>
